@@ -16,12 +16,12 @@ class ShortenedUrlsController < ApplicationController
     @url.original_url = params[:shortened_url][:original_url]
     @url.sanitize
     if @url.new_url?
-        if @url.save
-          redirect_to shortened_path(@url.short_url)
-        else
-          flash[:error] = "Check the error"
-          render :index
-        end
+      if @url.save
+        redirect_to shortened_path(@url.short_url)
+      else
+        flash[:error] = "Check the error"
+        render :index
+      end
     else
       flash[:notice] = "Short url is alredy in database"
     end
