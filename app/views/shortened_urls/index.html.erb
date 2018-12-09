@@ -1,0 +1,12 @@
+<p>Enter the url:</p>
+<%= form_for (@url), :action => 'shortened_urls/create', method: :post do |f| %>
+    <fieldset>
+      <div class="control-group">
+        <%= f.label :original_url, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :original_url, class: 'required-field' %>
+        </div>
+      </div>
+    </fieldset>
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+<% end %>
